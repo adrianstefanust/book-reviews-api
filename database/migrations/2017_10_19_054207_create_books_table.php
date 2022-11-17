@@ -18,6 +18,7 @@ class CreateBooksTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('title');
             $table->text('description');
+            $table->tinyInteger('status')->default('1');
             $table->timestamps();
         });
     }

@@ -28,8 +28,8 @@ class Rating extends Model
      *
      * @return Illuminate\Database\Eloquent\Relations\Relation
      */
-    // public function user()
-    // {
-    //     return $this->belongsTo(User::class);
-    // }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

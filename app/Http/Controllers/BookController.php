@@ -13,6 +13,12 @@ class BookController extends Controller
         $this->middleware('auth:api')->except(['index', 'show']);
     }
 
+    public function offsetExists($offset)
+    {
+        return isset($this->resource[$offset]);
+    }
+
+
     /**
      * Display a listing of books.
      *
@@ -20,7 +26,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        return BookResource::collection(Book::with('ratings')->paginate(25));
+        return BookResource::collection(Book::with('ratings')->get());
     }
 
     /**
